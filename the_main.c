@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * main - the gate 
+ * main - the gatekeeper
  * @ac: your arg counter
  * @av: your argument vector
  *
