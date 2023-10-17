@@ -4,8 +4,8 @@
  **_filmem - fills a memory area with a byte
  *@s: stringer
  *@b: byte filled
- *@n: number 
- *Return: 0 
+ *@n: number
+ *Return: 0
  */
 char *_filmem(char *s, char b, unsigned int n)
 {
