@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- *lxa_pust - prints an
+ *lxa_pust - prints an input
  * @res: the string to be printed
  *
  * Return: Nothing
