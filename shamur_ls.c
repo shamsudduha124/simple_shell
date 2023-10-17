@@ -5,7 +5,7 @@
  * @head: touch your head
  * @node: its node not a node
  *
- * Return: negative 
+ * Return: negative
  */
 ssize_t get_node_index(mur_t *head, mur_t *node)
 {
@@ -84,8 +84,8 @@ size_t print_list(const mur_t *h)
 /**
  * n_sw - the prefix returner
  * @node: head list pointer
- * @prefix: macthmakr 
- * @c: good character 
+ * @prefix: macthmakr
+ * @c: good character
  *
  * Return: mode null
  */
