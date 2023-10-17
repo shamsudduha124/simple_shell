@@ -1,0 +1,48 @@
+#include "shell.h"
+
+/**
+ * get_environ - returns the string
+ * @info: Structure containing potential arguments.
+ * Return: 0
+ */
+char **get_environ(mifo_t *info)
+{
+	if (!info->environ || info->env_changed)
+	{
+		info->environ = lst_t_strng(info->env);
+		info->env_changed = 0;
+	}
+
+	return (info->environ);
+}
+
+/**
+ * _unsetenv - Remove an environment variable
+ * @info: Structure containing potential arguments.
+ *  Return: 1 del, 0 otherwise
+ * @var: the string env var
+ */
+int _unsetenv(mifo_t *info, char *var)
+{
+	mur_t *node = info->env;
+	size_t i = 0;
+	char *p;
+
+	if (!node || !var)
+		return (0);
+
+	while (node)
+	{
+		p = starts_with(node->str, var);
+		if (p && *p == '=')
+		{
+			info->env_changed = d_nat(&(info->env), i);
+			i = 0;
+			node = info->env;
+			continue;
+		}
+		node = node->next;
+		i++;
+	}
+	return (info->env_changed);
+}
