@@ -15,6 +15,46 @@ char **get_environ(mifo_t *info)
 
 	return (info->environ);
 }
+/**
+ * _setenv - Initialize a new environment variable,
+ * @info: did you get the message
+ * @var: variable name property
+ * @value: tvalueue
+ *  Return: nothing
+ */
+int _setenv(mifo_t *info, char *var, char *value)
+{
+	char *buf = NULL;
+	mur_t *node;
+	char *p;
+
+	if (!var || !value)
+		return (0);
+
+	buf = malloc(_strlen(var) + _strlen(value) + 2);
+	if (!buf)
+		return (1);
+	_strcpy(buf, var);
+	_strcat(buf, "=");
+	_strcat(buf, value);
+	node = info->env;
+	while (node)
+	{
+		p = starts_with(node->str, var);
+		if (p && *p == '=')
+		{
+			free(node->str);
+			node->str = buf;
+			info->env_changed = 1;
+			return (0);
+		}
+		node = node->next;
+	}
+	node_ada_end(&(info->env), buf, 0);
+	free(buf);
+	info->env_changed = 1;
+	return (0);
+}
 
 /**
  * _unsetenv - Remove an environment variable
