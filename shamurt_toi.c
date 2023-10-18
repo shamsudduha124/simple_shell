@@ -1,4 +1,15 @@
+#include "shell.h"
 
+/**
+ * can_talk - if true shel is interactive
+ * @info: struct addres
+ *
+ * Return: 1 if can_talk mode 0 if not
+ */
+int can_talk(mifo_t *info)
+{
+	return (isatty(STDIN_FILENO) && info->readfd <= 2);
+}
 /**
  * meli_si - checks if is a delimeter
  * @c: the char 2 checks
