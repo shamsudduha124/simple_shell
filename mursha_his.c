@@ -1,6 +1,22 @@
+#include "shell.h"
 
+/**
+ * _hisrenum - do yo know rema, hisrenum
+ * @info: if you want info ask kimba
+ * Return: no change
+ */
+int _hisrenum(mifo_t *info)
+{
+	mur_t *node = info->history;
+	int rema = 0;
 
-
+	while (node)
+	{
+		node->num = rema++;
+		node = node->next;
+	}
+	return (info->histcount = rema);
+}
 
 /**
  * athens_his - athens and pathens they are from greece
