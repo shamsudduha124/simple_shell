@@ -2,9 +2,9 @@
 
 /**
  * _usedor - exits the shell
- * @info: Structure containing arguments. Used to maintain
- *          constant prototype.
- *  Return: (0) if info.argv[0] != "exit"
+ * @info: Structure containing arguments Used to maintain
+ *          constant prototpe
+ *  Return: (0) if info.argv[0] not "exit"
  */
 int _usedor(mifo_t *info)
 {
@@ -29,9 +29,9 @@ int _usedor(mifo_t *info)
 }
 
 /**
- * d_cm - change currnt directory
+ * d_cm - change currnt directree
  * @info: Structure containing potential arguments.
- *  Return: 0
+ *  Return: nothing
  */
 int d_cm(mifo_t *info)
 {
@@ -78,7 +78,7 @@ int d_cm(mifo_t *info)
 }
 
 /**
- * help_me - changes the current directory
+ * help_me - changes the current directory pls
  * @info: Structure containing potential arguments.
  *          constant function prototype.
  *  Return: 0
