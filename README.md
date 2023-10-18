@@ -14,6 +14,6 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 
 AUTHORS
 
-Abdussalam Shamsudduha Olalekan
+Abdussalam Shamsudduha Olalekan (shamsudduha124@gmail.com)
 
-Amina Murtadoh
+Amina Murtala (murtalaameena@gmail.com)
