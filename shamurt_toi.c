@@ -1,20 +1,8 @@
-#include "shell.h"
-
-/**
- * can_talk - if true shell is interactive
- * @info: struct address
- *
- * Return: 1 if can_talk mode, 0 if not
- */
-int can_talk(mifo_t *info)
-{
-	return (isatty(STDIN_FILENO) && info->readfd <= 2);
-}
 
 /**
  * meli_si - checks if is a delimeter
- * @c: the char to check
- * @delim: the delim string
+ * @c: the char 2 checks
+ * @delim: the delim strings
  * Return: 1 if true, 0 otherwise
  */
 int meli_si(char c, char *delim)
@@ -27,8 +15,8 @@ int meli_si(char c, char *delim)
 
 /**
  *alfa_is - alphabetic character
- *@i: A character to input
- *Return: 0 if c is not alphabetic, 1 if alphabetic
+ *@i: A character to inputs
+ *Return: 0 if c is not alphabetic 1 if alphabetic
  */
 
 int alfa_is(int i)
@@ -40,9 +28,9 @@ int alfa_is(int i)
 }
 
 /**
- *_atoi - string for integer
- *@sr: converted string
- *Return: 0 for number in string, 1 otherwise
+ *_atoi - string 4 integar
+ *@sr: converted strings
+ *Return: null for number in string, 1 otherwise
  */
 
 int _atoi(char *sr)
