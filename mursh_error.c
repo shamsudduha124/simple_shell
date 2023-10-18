@@ -3,7 +3,7 @@
 /**
  * toi_error - converts a string to an integer
  * @s: the string to be converted
- * Return: 0 if string, otherwise -1 on error
+ * Return: 0 if string otherwise -1 on errors
  */
 int toi_error(char *s)
 {
@@ -122,7 +122,7 @@ char *nu_base(long int num, int base, int flags)
 
 /**
  * kildcomment - function replaces first instance of '#' with '\0'
- * @adr: address of the string to modify
+ * @adr: address of the string to modifies
  *
  * Return: Always 0;
  */
@@ -137,3 +137,4 @@ void kildcomment(char *adr)
 			break;
 		}
 }
+
