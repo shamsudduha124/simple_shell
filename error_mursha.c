@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- *lxa_pust - prints an input
- * @res: the string to be printed
+ *lxa_pust - prints an inpt
+ * @res: the string to be printd
  *
- * Return: Nothing
+ * Return: Nothin
  */
 void lxa_pust(char *res)
 {
@@ -20,11 +20,11 @@ void lxa_pust(char *res)
 }
 
 /**
- * lxa_pustchr - writes the character c to stderr
- * @c: The character
+ * lxa_pustchr - writes the character c to stder
+ * @c: The characta
  *
  * Return: On success 1.
- * On error, -1 is returned.
+ * On error, -1 is returned
  */
 int lxa_pustchr(char c)
 {
@@ -42,9 +42,9 @@ static int aye;
 }
 
 /**
- * lxa_pustd - writes the character c to fd
- * @c: The character
- * @fd: The filedescriptor
+ * lxa_pustd - writes the characta c to fd
+ * @c: The characta
+ * @fd: The filedescriptar
  *
  * Return: On success 1.
  * On error, -1 is returned
@@ -65,11 +65,11 @@ int lxa_pustd(char c, int fd)
 }
 
 /**
- *lxa_pustfd - prints an input string
+ *lxa_pustfd - prints an input strig
  * @srt: the string
- * @fd: the filedescriptor
+ * @fd: the filedescripto
  *
- * Return: chars put
+ * Return: char put
  */
 int lxa_pustfd(char *srt, int fd)
 {
