@@ -1,9 +1,9 @@
 #include "shell.h"
 
 /**
- * get_environ - returns the string
- * @info: Structure containing potential arguments.
- * Return: 0
+ * get_environ - returns d string
+ * @info: Structure containng potential arguments.
+ * Return: null
  */
 char **get_environ(mifo_t *info)
 {
@@ -16,9 +16,9 @@ char **get_environ(mifo_t *info)
 	return (info->environ);
 }
 /**
- * _setenv - Initialize a new environment variable,
- * @info: did you get the message
- * @var: variable name property
+ * _setenv - Initializ a new environment variable,
+ * @info: did u get the message
+ * @var: variable nam property
  * @value: tvalueue
  *  Return: nothing
  */
@@ -57,10 +57,10 @@ int _setenv(mifo_t *info, char *var, char *value)
 }
 
 /**
- * _unsetenv - Remove an environment variable
- * @info: Structure containing potential arguments.
- *  Return: 1 del, 0 otherwise
- * @var: the string env var
+ * _unsetenv - Remv an environment variable
+ * @info: Structua containing potential arguments.
+ *  Return: 1 del 0 otherwise
+ * @var: d string env var
  */
 int _unsetenv(mifo_t *info, char *var)
 {
@@ -86,3 +86,4 @@ int _unsetenv(mifo_t *info, char *var)
 	}
 	return (info->env_changed);
 }
+
