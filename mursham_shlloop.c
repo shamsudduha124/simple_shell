@@ -1,142 +1,158 @@
 #include "shell.h"
 
 /**
- * _hisrenum - do yo know rema, hisrenum
- * @info: if you want info ask kimba
- * Return: no change
- */
-int _hisrenum(mifo_t *info)
-{
-	mur_t *node = info->history;
-	int rema = 0;
-
-	while (node)
-	{
-		node->num = rema++;
-		node = node->next;
-	}
-	return (info->histcount = rema);
-}
-
-
-
-/**
- * athens_his - athens and pathens they are from greece
- * @info: wikipedia knows more them
- * Return: nada
- */
-int athens_his(mifo_t *info)
-{
-	int nada, last = 0, caunt_lne = 0;
-	ssize_t file_display, ln_rd, fsize = 0;
-	struct stat st;
-	char *buf = NULL, *filename = histor_flget(info);
-
-	if (!filename)
-		return (0);
-
-	file_display = open(filename, O_RDONLY);
-	free(filename);
-	if (file_display == -1)
-		return (0);
-	if (!fstat(file_display, &st))
-		fsize = st.st_size;
-	if (fsize < 2)
-		return (0);
-	buf = malloc(sizeof(char) * (fsize + 1));
-	if (!buf)
-		return (0);
-	ln_rd = read(file_display, buf, fsize);
-	buf[fsize] = 0;
-	if (ln_rd <= 0)
-		return (free(buf), 0);
-	close(file_display);
-	for (nada = 0; nada < fsize; nada++)
-		if (buf[nada] == '\n')
-		{
-			buf[nada] = 0;
-			buid_lst(info, buf + last, caunt_lne++);
-			last = nada + 1;
-		}
-	if (last != nada)
-		buid_lst(info, buf + last, caunt_lne++);
-	free(buf);
-	info->histcount = caunt_lne;
-	while (info->histcount-- >= AMINA_MAX)
-		d_nat(&(info->history), 0);
-	_hisrenum(info);
-	return (info->histcount);
-}
-
-
-/**
- * his_patherns - thats the his_patherns function
- * @info: ask openai for the answer
- * Return: -1 and 1
- */
-int his_patherns(mifo_t *info)
-{
-	ssize_t file_display;
-	char *filename = histor_flget(info);
-	mur_t *node = NULL;
-
-	if (!filename)
-		return (-1);
-
-	file_display = open(filename, O_CREAT | O_TRUNC | O_RDWR, 0644);
-	free(filename);
-	if (file_display == -1)
-		return (-1);
-	for (node = info->history; node; node = node->next)
-	{
-		lxa_pustfd(node->str, file_display);
-		lxa_pustd('\n', file_display);
-	}
-	lxa_pustd(SHAMS_FLUSH_BUF, file_display);
-	close(file_display);
-	return (1);
-}
-
-/**
- * histor_flget -you know what this does, its for his
- * @info: ask bard google
- * Return: you can allocate it
- */
-
-char *histor_flget(mifo_t *info)
-{
-	char *fub, *rib;
-
-	rib = _getenv(info, "HOME=");
-	if (!rib)
-		return (NULL);
-	fub = malloc(sizeof(char) * (_strlen(rib) + _strlen(MURT_STRINGTOKEN) + 2));
-	if (!fub)
-		return (NULL);
-	fub[0] = 0;
-	_strcpy(fub, rib);
-	_strcat(fub, "/");
-	_strcat(fub, MURT_STRINGTOKEN);
-	return (fub);
-}
-
-/**
- * buid_lst - this is the buid_lst function
- * @info: at information info
- * @buf: as for bufallo
- * @caunt_lne: caunt linesss
+ * hsh - This one is just for running d code
+ * @info: This is like his wife
+ * @av: and this is like grand daughter
  *
- * Return: Always 0
+ * Return: they live like family
  */
-int buid_lst(mifo_t *info, char *buf, int caunt_lne)
+int hsh(mifo_t *info, char **av)
 {
-	mur_t *node = NULL;
+	ssize_t aminr = 0;
+	int inbuit_ret = 0;
 
-	if (info->history)
-		node = info->history;
-	node_ada_end(&node, buf, caunt_lne);
+	while (aminr != -1 && inbuit_ret != -2)
+	{
+		in_clr(info);
+		if (can_talk(info))
+			_puts("$ ");
+		lxa_pustchr(SHAMS_FLUSH_BUF);
+		aminr = get_input(info);
+		if (aminr != -1)
+		{
+			ifo_st(info, av);
+			inbuit_ret = find_inbuit(info);
+			if (inbuit_ret == -1)
+				lk_cd(info);
+		}
+		else if (can_talk(info))
+			_putchar('\n');
+		_frinfo(info, 0);
+	}
+	his_patherns(info);
+	_frinfo(info, 1);
+	if (!can_talk(info) && info->status)
+		exit(info->status);
+	if (inbuit_ret == -2)
+	{
+		if (info->err_num == -1)
+			exit(info->status);
+		exit(info->err_num);
+	}
+	return (inbuit_ret);
+}
 
-	if (!info->history)
-		info->history = node;
-	return (0);
+/**
+ * find_inbuit - looking for a hous in zaria
+ * @info: call aminat Murtalha
+ *
+ * Return: -1 not found,
+ *			0 executed successfully,
+ *			1 found but not successful,
+ *		   -2 signals exit()
+ */
+int find_inbuit(mifo_t *info)
+{
+	int teef, inbut_ir = -1;
+	inbuit_table inbuittbl[] = {
+		{"exit", _usedor},
+		{"env", _myenv},
+		{"help", help_me},
+		{"history", _historical},
+		{"setenv", _mysetenv},
+		{"unsetenv", _myunsetenv},
+		{"cd", d_cm},
+		{"alias", _silas},
+		{NULL, NULL}
+	};
+
+	for (teef = 0; inbuittbl[teef].type; teef++)
+		if (_strcmp(info->argv[0], inbuittbl[teef].type) == 0)
+		{
+			info->line_count++;
+			inbut_ir = inbuittbl[teef].func(info);
+			break;
+		}
+	return (inbut_ir);
+}
+
+/**
+ * lk_cd - i dont know this one oo
+ * @info: maybe you dhould aask my partner
+ * Return: voillaa
+ */
+void lk_cd(mifo_t *info)
+{
+	char *path = NULL;
+	int leth, qeth;
+
+	info->path = info->argv[0];
+	if (info->linecount_flag == 1)
+	{
+		info->line_count++;
+		info->linecount_flag = 0;
+	}
+	for (leth = 0, qeth = 0; info->arg[leth]; leth++)
+		if (!meli_si(info->arg[leth], " \t\n"))
+			qeth++;
+	if (!qeth)
+		return;
+
+	path = pat_fnda(info, _getenv(info, "PATH="), info->argv[0]);
+	if (path)
+	{
+		info->path = path;
+		kurf_cm(info);
+	}
+	else
+	{
+		if ((can_talk(info) || _getenv(info, "PATH=")
+			|| info->argv[0][0] == '/') && comnd_si(info, info->argv[0]))
+			kurf_cm(info);
+		else if (*(info->arg) != '\n')
+		{
+			info->status = 127;
+			err_prnt(info, "not found\n");
+		}
+	}
+}
+
+/**
+ * kurf_cm - comando kill the boss, but i cant.
+ * @info: ask people that watch india movies
+ *
+ * Return: let
+ */
+
+void kurf_cm(mifo_t *info)
+{
+	pid_t child_pid;
+
+	child_pid = fork();
+	if (child_pid == -1)
+	{
+		perror("Error:");
+		return;
+	}
+	if (child_pid == 0)
+	{
+		if (execve(info->path, info->argv, get_environ(info)) == -1)
+		{
+			_frinfo(info, 1);
+			if (errno == EACCES)
+				exit(126);
+			exit(1);
+		}
+	}
+	else
+	{
+		wait(&(info->status));
+		if (WIFEXITED(info->status))
+		{
+			info->status = WEXITSTATUS(info->status);
+			if (info->status == 126)
+				err_prnt(info, "Permission denied\n");
+		}
+	}
 }
