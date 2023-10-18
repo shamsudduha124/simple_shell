@@ -1,4 +1,20 @@
+#include "shell.h"
 
+/**
+ **_filmem - fills a memory area with a byte
+ *@s: stringer
+ *@b: byte filled
+ *@n: number
+ *Return: 0
+ */
+char *_filmem(char *s, char b, unsigned int n)
+{
+	unsigned int i;
+
+	for (i = 0; i < n; i++)
+		s[i] = b;
+	return (s);
+}
 
 /**
  * _loc - reallocates a block of memory
