@@ -43,6 +43,19 @@ ssize_t input_buf(mifo_t *info, char **buf, size_t *len)
 }
 
 /**
+ * sigintHandler - for ctrl-C command
+ * @sig_num: the signal number
+ *
+ * Return: NULL
+ */
+void sigintHandler(__attribute__((unused))int sig_num)
+{
+	_puts("\n");
+	_puts("$ ");
+	_putchar(SHAMS_FLUSH_BUF);
+}
+
+/**
  * get_input - gets a line minus the newline
  * @info: parameter struct
  *
