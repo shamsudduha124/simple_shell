@@ -1,4 +1,5 @@
-Simple_shell(ikaraun)
+s
+Simple shell(ikaraun)
 
 This is a simple shell project that mimics the bash shell.
 
