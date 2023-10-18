@@ -14,7 +14,6 @@ int pl_sr(char **old, char *new)
 	return (1);
 }
 
-
 /**
  * amin_chan - checks we cont on last status
  * @info: the struct
@@ -87,7 +86,7 @@ int sha_chain(mifo_t *info, char *buf, size_t *p)
 
 /**
  * pl_alas - kimba please dont flag me
- * @info: i dont know
+ * @info: i dont knw
  *
  * Return: please
  */
