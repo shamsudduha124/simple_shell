@@ -1,6 +1,16 @@
 #include "shell.h"
 
-
+/**
+ * _historical - displays the history list, one command by line, preceded
+ *
+ * @info: Structure containing potential arguments. Used to maintain
+ *  Return: 0
+ */
+int _historical(mifo_t *info)
+{
+	print_list(info->history);
+	return (0);
+}
 
 /**
  * unset_alias -alias to string
