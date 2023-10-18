@@ -1,11 +1,11 @@
 #include "shell.h"
 
 /**
-* comnd_si - determines if a file is an executable command
-* @info: the info struct
-* @path: path to the file
+* comnd_si - determines if a file is an executable comman
+* @info: the info structure
+* @path: path to 2 file
 *
-* Return: 1 if true, 0 otherwise
+* Return: 1 if true 0 otherwise
 */
 int comnd_si(mifo_t *info, char *path)
 {
@@ -23,7 +23,7 @@ int comnd_si(mifo_t *info, char *path)
 }
 /**
 * xtr_pub - duplicates characters
-* @pathstr: the PATH string
+* @pathstr: the PATH strings
 * @start: starting index
 * @stop: stopping index
 *
@@ -43,9 +43,9 @@ char *xtr_pub(char *pathstr, int start, int stop)
 }
 
 /**
-* pat_fnda - finds this cmd in the PATH string
-* @info: the info struct
-* @pathstr: the PATH string
+* pat_fnda - finds this cmd in the PATH strings
+* @info: the info structs
+* @pathstr: the PATH strings
 * @cmd: the cmd to find
 *
 * Return: full path of cmd if found or NULL
@@ -85,3 +85,4 @@ char *pat_fnda(mifo_t *info, char *pathstr, char *cmd)
 	}
 	return (NULL);
 }
+
