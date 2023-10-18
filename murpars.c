@@ -85,4 +85,3 @@ char *pat_fnda(mifo_t *info, char *pathstr, char *cmd)
 	}
 	return (NULL);
 }
-
