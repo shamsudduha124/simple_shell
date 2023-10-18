@@ -86,4 +86,3 @@ int _unsetenv(mifo_t *info, char *var)
 	}
 	return (info->env_changed);
 }
-
