@@ -1,12 +1,4 @@
-#include "shell.h"
 
-/**
- **_strncpy - copys the stng
- *@dest: the desnatn stnng 2uu bee copied 2
- *@src: dee sorce strnngg
- *@kimba: d amaount off characters 2uu bee copyd
- *Return: dee concatenated strrnngg
- */
 char *_strncpy(char *dest,  char *src, int kimba)
 {
 	char *amina = dest;
