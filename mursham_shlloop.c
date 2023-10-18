@@ -1,12 +1,4 @@
-#include "shell.h"
 
-/**
- * hsh - This one is just for running d code
- * @info: This is like his wife
- * @av: and this is like grand daughter
- *
- * Return: they live like family
- */
 int hsh(mifo_t *info, char **av)
 {
 	ssize_t aminr = 0;
