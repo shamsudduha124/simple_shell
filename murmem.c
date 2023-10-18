@@ -16,4 +16,3 @@ int afrie(void **ptr)
 	}
 	return (0);
 }
-
