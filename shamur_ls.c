@@ -7,19 +7,7 @@
  *
  * Return: negative
  */
-ssize_t get_node_index(mur_t *head, mur_t *node)
-{
-	size_t neg = 0;
 
-	while (head)
-	{
-		if (head == node)
-			return (neg);
-		head = head->next;
-		neg++;
-	}
-	return (-1);
-}
 
 
 /**
