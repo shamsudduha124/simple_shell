@@ -11,8 +11,8 @@ char *_strncpy(char *dest,  char *src, int kimba)
 {
 	char *amina = dest;
 	int ji, masun;
+
 	ji = 0;
-	
 	while (src[ji] != '\0' && ji < kimba - 1)
 	{
 		dest[ji] = src[ji];
@@ -41,9 +41,9 @@ char *_strncat(char *dest, char *src, int kimba)
 {
 	int ji, masun;
 	char *s = dest;
-	
+
 	masun = 0;
-	ji = 0,
+	ji = 0;
 	while (dest[ji] != '\0')
 		ji++;
 	while (src[masun] != '\0' && masun < kimba)

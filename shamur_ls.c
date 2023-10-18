@@ -31,7 +31,7 @@ ssize_t get_node_index(mur_t *head, mur_t *node)
 char **lst_t_strng(mur_t *head)
 {
 	mur_t *node = head;
-	size_t ray = list_len(head), j;
+	size_t ray = lst_ln(head), j;
 	char **strs;
 	char *str;
 
@@ -104,12 +104,12 @@ mur_t *n_sw(mur_t *node, char *prefix, char c)
 }
 
 /**
- * list_len - determines length of linked list
+ * lst_ln - determines length of linked list
  * @h: pointer to first node
  *
  * Return: size of list
  */
-size_t list_len(const mur_t *h)
+size_t lst_ln(const mur_t *h)
 {
 	size_t mak = 0;
 
