@@ -1,5 +1,15 @@
 #include "shell.h"
-
+/**
+ * _myenv - prints my current environment
+ * @info: Structure containing potential arguments.
+ *
+ * Return: Always 0
+ */
+int _myenv(mifo_t *info)
+{
+	plstr(info->env);
+	return (0);
+}
 
 /**
  * _getenv - gets the val of an environ variable
