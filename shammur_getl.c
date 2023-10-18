@@ -107,18 +107,6 @@ ssize_t read_buf(mifo_t *info, char *buf, size_t *i)
 	return (r);
 }
 
-/**
- * sigintHandler - for ctrl-C command
- * @sig_num: the signal number
- *
- * Return: NULL
- */
-void sigintHandler(__attribute__((unused))int sig_num)
-{
-	_puts("\n");
-	_puts("$ ");
-	_putchar(SHAMS_FLUSH_BUF);
-}
 
 /**
  * _getline - gets the next line of input from STDIN
