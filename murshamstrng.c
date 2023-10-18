@@ -1,5 +1,12 @@
 #include "shell.h"
-
+/**
+ * _strcmp - performs lexicogarphic comparison of two strangs.
+ * @hamz1: the first strang
+ * @hamz2: the second strang
+ *
+ * Return: negative if hamz1 < hamz2,
+ * hamz1 > hamz2, 0 if hamz1 == hamz2
+ */
 int _strcmp(char *hamz1, char *hamz2)
 {
 	while (*hamz1 && *hamz2)
