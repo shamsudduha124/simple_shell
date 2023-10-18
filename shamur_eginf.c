@@ -44,31 +44,4 @@ void ifo_st(mifo_t *info, char **av)
 	}
 }
 
-/**
- * _frinfo - frees info_t struct fields
- * @info: struct address
- * @all: true if freeing all fields
- */
-void _frinfo(mifo_t *info, int all)
-{
-	_frimee(info->argv);
-	info->argv = NULL;
-	info->path = NULL;
-	if (all)
-	{
-		if (!info->cmd_buf)
-			free(info->arg);
-		if (info->env)
-			free_list(&(info->env));
-		if (info->history)
-			free_list(&(info->history));
-		if (info->alias)
-			free_list(&(info->alias));
-		_frimee(info->environ);
-			info->environ = NULL;
-		afrie((void **)info->cmd_buf);
-		if (info->readfd > 2)
-			close(info->readfd);
-		_putchar(SHAMS_FLUSH_BUF);
-	}
-}
+
