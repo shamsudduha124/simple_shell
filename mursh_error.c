@@ -137,4 +137,3 @@ void kildcomment(char *adr)
 			break;
 		}
 }
-
